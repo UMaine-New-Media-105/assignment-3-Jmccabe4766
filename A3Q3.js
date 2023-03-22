@@ -41,7 +41,7 @@ function addKnife(x, y) {
 function addJason(x, y) {
   //Draw Jason mask sprite
   push();
-
+  translate(mouseX - 75, y - 320);
 
   drawingContext.shadowOffsetX = 5;
   drawingContext.shadowOffsetY = 5;
@@ -49,7 +49,7 @@ function addJason(x, y) {
   drawingContext.shadowColor = "black";
 
   fill("slateGrey");
-  rect(0, 350, 400, 100);
+  //rect(0, 350, 400, 100); 
   noFill();
   fill("Wheat");
   ellipse(110, 320, 70, 80);
@@ -86,10 +86,10 @@ function addJason(x, y) {
   ellipse(131, 344, 2, 2);
   ellipse(94, 338, 2, 2);
   ellipse(89, 344, 2, 2);
+
   pop();
 
   //place sprite at bottom of screen
-  translate(x - 110, y - 320);
   noFill();
   //add color to face of sprite
 
