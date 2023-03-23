@@ -8,27 +8,33 @@
 
 function setup() {
   createCanvas(400, 400);
+  // define global variables
 groundY = 340;
   jasonHeight = 50;
   jasonWidth = 50;
-  jasonX = 0;
+  jasonX = mouseX;
   speed = 5;
   knifeY = 0
   knifeIsFalling = false;
   JasonIsHit = false;
 }
+function draw(x, y){ //set backgroud grey and draw floor along with the sprite
+  background(160);
+  fill("slategrey");
+  rect(0,350,400,100);
+  addJason(mouseX, y);
+}
 
-
-function draw() { //Draw Jason mask
-  background(160)
-  
-  drawingContext. shadowOffsetX = 5;
+function addJason(x, y) { //Draw Jason mask as a function
+//  background(160);
+  translate(mouseX - 110, 0); // translate so that cursor sits in the middle of the sprite
+  drawingContext. shadowOffsetX = 5;// draw shadows inside the sprite
   drawingContext. shadowOffsetY = 5;
   drawingContext. shadowBlur = 10;
   drawingContext. shadowColor = 'black';
   
 fill('slateGrey');
-  rect(0,350,400,100);
+//  rect(0,350,400,100);
   noFill();
   fill('Wheat');
   ellipse(110,320,70,80);
@@ -57,4 +63,5 @@ fill('slateGrey');
   ellipse(94,338,2,2);
   ellipse(89,344,2,2);
 }
+
 
